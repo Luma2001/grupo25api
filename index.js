@@ -2,12 +2,15 @@ const express =  require("express")
 const app = express();
 const PORT = process.env.PORT || 3030
 const cors = require("cors")
-const alumnosRoute = require("./routers/alumnosRoute.js")
+const alumnosRoute = require("./routes/alumnosRouter.js")
 const db = require("./data/db.js")
 
 app.use(cors())
 app.use(express.json())
 
+app.get("/", (req, res) => {
+    res.send("Este es el Server Home")
+}) 
 app.use("/alumnos", alumnosRoute)
 
 //Conexion a la base de datos
