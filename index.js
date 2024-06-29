@@ -9,7 +9,7 @@ app.use(cors())
 app.use(express.json())
 
 app.get("/", (req, res) => {
-    res.send("Este es el Server Home")
+    res.send("Codo a Codo 2024 - Comision 24127\n\nGrupo 25\nLuciana Quilcate\nVeronica\nDiego Quevedo\nLeonardo Mathot\n\nEste es el Server Home\n\nAgregar /alumnos a la url para ver la info\n\n(https://leom.alwaysdata.net/alumnos)")
 }) 
 app.use("/alumnos", alumnosRoute)
 
