@@ -5,7 +5,7 @@ const alumnosModel = require("../models/alumnosModel.js")
 //CREATE - POST
 const registrarAlumno = async (req,res)=>{
     try {
-        const alumno = await grupoModel.create(req.body)
+        const alumno = await alumnosModel.create(req.body)
         res.json({"message":"Registro creado con éxito"})
     } catch (error) {
         res.json({message:error.message})
