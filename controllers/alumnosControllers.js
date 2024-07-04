@@ -1,6 +1,7 @@
 const alumnosModel = require("../models/alumnosModel.js")
 
 // FUNCION QUE TRAE TODOS LOS ALUMNOS
+
 //CREATE - POST
 const registrarAlumno = async (req,res)=>{
     try {
