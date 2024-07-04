@@ -1,4 +1,3 @@
-const { where } = require("sequelize")
 const alumnosModel = require("../models/alumnosModel.js")
 
 // FUNCION QUE TRAE TODOS LOS ALUMNOS
@@ -22,8 +21,6 @@ const traerUnAlumno = async (req, res) => {
     }
 }
 
-
-
 //UPDATE
 const actualizarAlumno = async (req,res) =>{
     try {
@@ -35,7 +32,6 @@ const actualizarAlumno = async (req,res) =>{
         res.json({message:error.message}) 
     }
 }
-
 
 //DELETE -DELETE
 const borrarAlumno = async (req, res)=>{
