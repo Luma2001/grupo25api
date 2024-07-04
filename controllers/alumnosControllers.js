@@ -1,3 +1,4 @@
+const { where } = require("sequelize")
 const empleadosModel = require("../models/alumnosModel.js")
 
 // FUNCION QUE TRAE TODOS LOS ALUMNOS
@@ -12,6 +13,30 @@ const traerAlumnos = async (req, res) => {
 }
 
 
+// READ - GET BY ID
+const traerUnAlumno = async (req, res) => {
+    try {
+        const alunmo = await empleadosModel.findByPk(req.params.id)
+        res.json(alunmo)
+    } catch (error) {
+        res.json({ message: error.message })
+    }
+}
+
+
+
+//UPDATE
+const actualizarAlumno = async (req,res) =>{
+    try {
+        await empleadosModel.update(req.body,{
+            where: {id:req.params.id}
+        }) 
+        res.json ({"message":"Registro actualizado correctamente"}) 
+    } catch (error) {
+        res.json({message:error.message}) 
+    }
+}
+
 
 //DELETE -DELETE
 const borrarAlumno = async (req, res)=>{
@@ -24,4 +49,4 @@ const borrarAlumno = async (req, res)=>{
         res.json({message:error.message})
     }
 }
-module.exports = { traerAlumnos, borrarAlumno }
+module.exports = { traerAlumnos, traerUnAlumno, borrarAlumno, actualizarAlumno}
