@@ -1,6 +1,19 @@
 const alumnosModel = require("../models/alumnosModel.js")
 
 // FUNCION QUE TRAE TODOS LOS ALUMNOS
+//CREATE - POST
+const registrarAlumno = async (req,res)=>{
+    try {
+        const alumno = await grupoModel.create(req.body)
+        res.json({"message":"Registro creado con éxito"})
+    } catch (error) {
+        res.json({message:error.message})
+    }
+}
+
+
+
+
 // READ - GET
 const traerAlumnos = async (req, res) => {
     try {
@@ -44,4 +57,4 @@ const borrarAlumno = async (req, res)=>{
         res.json({message:error.message})
     }
 }
-module.exports = { traerAlumnos, traerUnAlumno, borrarAlumno, actualizarAlumno}
+module.exports = { registrarAlumno, traerAlumnos, traerUnAlumno, borrarAlumno, actualizarAlumno}
