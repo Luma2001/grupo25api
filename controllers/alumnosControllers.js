@@ -18,8 +18,8 @@ const registrarAlumno = async (req,res)=>{
 // READ - GET
 const traerAlumnos = async (req, res) => {
     try {
-        const alunmos = await alumnosModel.findAll()
-        res.json(alunmos)
+        const alumnos = await alumnosModel.findAll()
+        res.json(alumnos)
     } catch (error) {
         res.json({ message: error.message })
     }
