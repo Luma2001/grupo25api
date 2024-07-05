@@ -1,7 +1,7 @@
 const express = require("express")
 const router = express.Router()
 
-const { registrarAlumno, traerAlumnos, traerUnAlumno, borrarAlumno } = require("../controllers/alumnosControllers.js")
+const { registrarAlumno, traerAlumnos, traerUnAlumno, actualizarAlumno, borrarAlumno } = require("../controllers/alumnosControllers.js")
 
 router.post("/", registrarAlumno)
 router.get("/", traerAlumnos) // 
