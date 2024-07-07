@@ -9,17 +9,20 @@ app.use(cors())
 app.use(express.json())
 
 app.get("/", (req, res) => {
-    res.send(`<h1>Codo a Codo 2024 - Comision 24127</h1>
+    res.send(`
+    <style>
+        body {font-family: sans-serif;}
+    </style>
+    <h1>Codo a Codo 2024 - Comision 24127</h1>
     <h2>Grupo 25</h2>
     <ul>
-    <li>Luciana Quilcate</li>
-    <li>Veronica</li>
-    <li>Diego Quevedo</li>
-    <li>Leonardo Mathot</li>
+        <li>Luciana Quilcate</li>
+        <li>Veronica</li>
+        <li>Diego Quevedo</li>
+        <li>Leonardo Mathot</li>
     </ul>
-    <h3>Este es el Server Home</h3>
-    <p>Agregar <strong><code>/alumnos</code></strong> a la url para ver la info</p>
-    <p>(<code>https://leom.alwaysdata.net/alumnos</code>)</p>`)
+    <h2>Este es el Server Home</h2>
+    <p>Agregar <strong>/alumnos</strong> a la url para ver la info: https://leom.alwaysdata.net/alumnos</code></p>`)
 }) 
 app.use("/alumnos", alumnosRoute)
 
