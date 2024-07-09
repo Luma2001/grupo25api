@@ -35,7 +35,20 @@ const traerUnAlumno = async (req, res) => {
     }
 }
 
-//UPDATE
+//READ - GET BY GRUPO
+const traerUnGrupo = async (req,res)=>{
+    try {
+        const grupo = await alumnosModel.findAll({
+            where:{grupo:req.params.grupo}
+        })
+        res.json(grupo)
+
+    } catch (error) {
+        res.json({message:error.message})
+    }
+}
+
+//UPDATE - PUT
 const actualizarAlumno = async (req,res) =>{
     try {
         await alumnosModel.update(req.body,{
@@ -58,4 +71,4 @@ const borrarAlumno = async (req, res)=>{
         res.json({message:error.message})
     }
 }
-module.exports = { registrarAlumno, traerAlumnos, traerUnAlumno, borrarAlumno, actualizarAlumno}
+module.exports = { registrarAlumno, traerAlumnos, traerUnAlumno, traerUnGrupo, borrarAlumno, actualizarAlumno}
