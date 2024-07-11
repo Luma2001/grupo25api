@@ -7,7 +7,6 @@ El frontend se conecta a esta API para obtener los registros de una base de dato
 
 ## Integrantes
 - Luciana Quilcate
-- Veronica 
 - Diego Quevedo
 - Leonardo Mathot
 
